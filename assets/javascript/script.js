@@ -8,15 +8,16 @@ var timer = document.querySelector("#time");
 var startButton = document.querySelector(".start-button");
 var questions = document.querySelector("#questions");
 var answers = document.querySelector("#answers");
-var question = document.querySelector("#question");
+var questionEl = document.querySelector("#question");
 var title1 = document.querySelector("#title1");
 var title2 = document.querySelector("#title2");
 var title3 = document.querySelector("#title3");
 var title4 = document.querySelector("#title4");
-var answer1 = document.querySelector("#answer1");
-var answer2 = document.querySelector("#answer2");
-var answer3 = document.querySelector("#answer3");
-var answer4 = document.querySelector("#answer4");
+var answerEl1 = document.querySelector("#answer1");
+var answerEl2 = document.querySelector("#answer2");
+var answerEl3 = document.querySelector("#answer3");
+var answerEl4 = document.querySelector("#answer4");
+var correct = false;
 
 var questionArray = [
     question1 = {
@@ -77,6 +78,11 @@ var questionArray = [
     }
 ]
 
+
+
+
+
+
 function startTimer() {
     setInterval(function() {
         timer.textContent = startCountDown
@@ -84,16 +90,32 @@ function startTimer() {
     }, 1000)
 }
 
-function nextQuestion() {
-    question.textContent = questionArray[questionNumber].question
-    answer1.textContent = questionArray[questionNumber].correctAnswer
-    answer2.textContent = questionArray[questionNumber].incorrectAnswer1
-    answer3.textContent = questionArray[questionNumber].incorrectAnswer2
-    answer4.textContent = questionArray[questionNumber].incorrectAnswer3
-    questionNumber++
+function correctA() {
+      correct = true
+      console.log('correct');
+      nextQuestion()
+    } 
+
+function wrongA() {
+    correct
+    console.log('incorrect');
+    nextQuestion()
 }
-
-
+    
+    function nextQuestion() {
+        questionEl.textContent = questionArray[questionNumber].question
+        answerEl1.textContent = questionArray[questionNumber].correctAnswer
+        answerEl2.textContent = questionArray[questionNumber].incorrectAnswer1
+        answerEl3.textContent = questionArray[questionNumber].incorrectAnswer2
+        answerEl4.textContent = questionArray[questionNumber].incorrectAnswer3
+        answerEl1.addEventListener("click",correctA)
+        answerEl2.addEventListener("click",wrongA)
+        answerEl3.addEventListener("click",wrongA)
+        answerEl4.addEventListener("click",wrongA)
+        questionNumber++
+    }
+    
+    
 function startQuiz() {
     startTimer()
     title1.setAttribute("style", "display: none")

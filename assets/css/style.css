@@ -78,10 +78,26 @@ header {
     margin-bottom: 35px;
 }
 
-#answer {
+#answer1, #answer2, #answer3, #answer4 {
     display: flex;
-    margin: 3px;
+    background: linear-gradient(to right, #aaf0a8, #70d573);
+    border-radius: 10px;
+    padding: 3px;
+    margin: 5px;
     width: 250px;
+}
+
+#answer1:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+#answer2:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+#answer3:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+#answer4:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 
