@@ -13,17 +13,27 @@
     </header>
     <div class="content">
       <div class="quiz-card">
-        <h1>JavaScript Quiz</h1>
-        <h2>How Much JavaScript Do You Know?</h2>
-        <p>
+        <h1 class="titles">JavaScript Quiz</h1>
+        <h2 class="titles">How Much JavaScript Do You Know?</h2>
+        <p class="titles">
         This is a short quiz that will test your knowledge on JavaScript. Press
         the "Start Quiz" button to begin the quiz. Note, this is a timed quiz
         and for each question you get wrong you will be penalized for time.
         You're score will be the amount of time you have left when you answered
         all the questions.
         </p>
-        <h2>Good Luck!</h2>
+        <h2 class="titles">Good Luck!</h2>
         <button class="start-button">Start Quiz</button>
+        <div id="questions">
+          <h2 class="ask-question"><span id="question"></span></h2>
+        </div>
+        <div id="answers">
+          <button id="answer">1. <span id="answer1"></span></button>
+          <button id="answer">2. <span id="answer2"></span></button>
+          <button id="answer">3. <span id="answer3"></span></button>
+          <button id="answer">4. <span id="answer4"></span></button>
+        </div>
+         
       </div>
     </div>
     <script src="./assets/javascript/script.js"></script>

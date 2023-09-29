@@ -42,7 +42,7 @@ header {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.quiz-card h1, h2, p {
+.quiz-card .titles{
     margin-bottom: 20px;
     text-align: center;
 }
@@ -56,9 +56,34 @@ header {
     background-color: teal;
     border-radius: 30px;
     color: white;
-    display: flex;
     justify-content: center;
     font-size: 100%;
     width: 100px;
 }
+
+#questions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.ask-question{
+    font-family: 'Circular', sans-serif;
+    font-size: 125%;
+    margin-bottom: 35px;
+}
+
+#answer {
+    display: flex;
+    margin: 3px;
+    width: 230px;
+}
+
 

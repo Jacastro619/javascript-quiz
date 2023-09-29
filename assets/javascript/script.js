@@ -1,8 +1,11 @@
 // variable declarations
 // querySelectors
 var startCountDown = 90
+
 var timer = document.querySelector("#time")
 var startButton = document.querySelector(".start-button");
+var titles = document.querySelector(".titles");
+
 var questionArray = [
     question1 = {
         question: "What is JavaScript primarily used for?",
@@ -33,7 +36,7 @@ var questionArray = [
         incorrectAnswer3: "::comment::",
     }, 
     question5 = {
-        question: "Which JavaScript function is used to output data to the console for debuggin?",
+        question: "Which JavaScript function is used to output data to the console for debugging?",
         correctAnswer: "console.log()",
         incorrectAnswer1: "print()",
         incorrectAnswer2: "display()",
@@ -69,9 +72,15 @@ function startTimer() {
     }, 1000)
 }
 
+function nextQuestion() {
+
+}
+
 
 function startQuiz() {
     startTimer()
+    titles.setAttribute("style", "display: none")
+    startButton.setAttribute("style", "display: none")
 }
 
 startButton.addEventListener("click", startQuiz)
