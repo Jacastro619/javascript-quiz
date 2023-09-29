@@ -42,7 +42,7 @@ header {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.quiz-card .titles{
+.quiz-card #title1, #title2, #title3, #title4 {
     margin-bottom: 20px;
     text-align: center;
 }
@@ -62,16 +62,14 @@ header {
 }
 
 #questions {
-    display: flex;
+    display: none;
     flex-direction: column;
     text-align: center;
-    display: none;
 }
 
 #answers {
-    display: flex;
-    flex-direction: column;
     display: none;
+    flex-direction: column;
 }
 
 .ask-question{
@@ -83,7 +81,7 @@ header {
 #answer {
     display: flex;
     margin: 3px;
-    width: 230px;
+    width: 250px;
 }
 
 

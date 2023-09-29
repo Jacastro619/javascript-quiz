@@ -1,10 +1,22 @@
 // variable declarations
 // querySelectors
 var startCountDown = 90
+var questionNumber = 0
+var answerArray = [1, 2, 3, 4]
 
-var timer = document.querySelector("#time")
+var timer = document.querySelector("#time");
 var startButton = document.querySelector(".start-button");
-var titles = document.querySelector(".titles");
+var questions = document.querySelector("#questions");
+var answers = document.querySelector("#answers");
+var question = document.querySelector("#question");
+var title1 = document.querySelector("#title1");
+var title2 = document.querySelector("#title2");
+var title3 = document.querySelector("#title3");
+var title4 = document.querySelector("#title4");
+var answer1 = document.querySelector("#answer1");
+var answer2 = document.querySelector("#answer2");
+var answer3 = document.querySelector("#answer3");
+var answer4 = document.querySelector("#answer4");
 
 var questionArray = [
     question1 = {
@@ -73,14 +85,25 @@ function startTimer() {
 }
 
 function nextQuestion() {
-
+    question.textContent = questionArray[questionNumber].question
+    answer1.textContent = questionArray[questionNumber].correctAnswer
+    answer2.textContent = questionArray[questionNumber].incorrectAnswer1
+    answer3.textContent = questionArray[questionNumber].incorrectAnswer2
+    answer4.textContent = questionArray[questionNumber].incorrectAnswer3
+    questionNumber++
 }
 
 
 function startQuiz() {
     startTimer()
-    titles.setAttribute("style", "display: none")
+    title1.setAttribute("style", "display: none")
+    title2.setAttribute("style", "display: none")
+    title3.setAttribute("style", "display: none")
+    title4.setAttribute("style", "display: none")
     startButton.setAttribute("style", "display: none")
+    questions.setAttribute("style", "display: flex")
+    answers.setAttribute("style", "display: flex")
+    nextQuestion()
 }
 
 startButton.addEventListener("click", startQuiz)
