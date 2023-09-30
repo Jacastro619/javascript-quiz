@@ -1,6 +1,6 @@
 // variable declarations
 // querySelectors
-var startCountDown = 90
+var startCountDown = 30
 var questionNumber = 0
 var answersArray = [1, 2, 3, 4]
 
@@ -17,7 +17,15 @@ var answerEl1 = document.querySelector("#answer1");
 var answerEl2 = document.querySelector("#answer2");
 var answerEl3 = document.querySelector("#answer3");
 var answerEl4 = document.querySelector("#answer4");
-var correct = true
+var scorePage = document.querySelector("#score-page")
+var highscorePage = document.querySelector("#highscore-page")
+var highscoreLink = document.querySelector("#scores")
+var score = document.querySelector("#the-score")
+var initials = document.querySelector("#initial-input")
+var submitButton = document.querySelector("#submit")
+var resetButton = document.querySelector("#reset")
+var goBackButton = document.querySelector("#go-back")
+var clearButton = document.querySelector("#clear-score")
 
 var questionArray = [
     question1 = {
@@ -88,9 +96,18 @@ function startTimer() {
             clearInterval(countdown)
             questions.setAttribute("style", "display: none")
             answers.setAttribute("style", "display: none")
+            scorePage.setAttribute("style", "display: flex")
+            score.textContent = 0
+            score.value = 0
             startCountDown = 0
             newTime()
-        } else {
+        } 
+        if(questionArray[questionNumber] === undefined) {
+            clearInterval(countdown)
+            score.textContent = startCountDown + 1
+            score.value = startCountDown + 1
+        }
+        else {
             startCountDown--
             newTime()
         }
@@ -99,36 +116,43 @@ function startTimer() {
 
 
 function correctA() {
-      correct = true
       nextQuestion()
     }
 
 function wrongA() {
-    correct = false
     startCountDown -= 10
     newTime()
     nextQuestion()
-    if (startCountDown <= 0) {
+}
+
+// function checkTime() {
+// if (startCountDown <= 0) {
+//     questions.setAttribute("style", "display: none")
+//     answers.setAttribute("style", "display: none")
+//     scorePage.setAttribute("style", "display: flex")
+//     score.textContent = 0
+// }
+// }
+
+function nextQuestion() {
+    if (questionArray[questionNumber] === undefined) {
         questions.setAttribute("style", "display: none")
         answers.setAttribute("style", "display: none")
-    }
+        scorePage.setAttribute("style", "display: flex")
+    } else {
+    questionEl.textContent = questionArray[questionNumber].question
+    answerEl2.textContent = questionArray[questionNumber].correctAnswer
+    answerEl4.textContent = questionArray[questionNumber].incorrectAnswer1
+    answerEl1.textContent = questionArray[questionNumber].incorrectAnswer2
+    answerEl3.textContent = questionArray[questionNumber].incorrectAnswer3
+    answerEl2.addEventListener("click",correctA)
+    answerEl1.addEventListener("click",wrongA)
+    answerEl3.addEventListener("click",wrongA)
+    answerEl4.addEventListener("click",wrongA)
+    questionNumber++
+ } 
 }
-    
-    function nextQuestion() {
-        questionEl.textContent = questionArray[questionNumber].question
-        answerEl2.textContent = questionArray[questionNumber].correctAnswer
-        answerEl4.textContent = questionArray[questionNumber].incorrectAnswer1
-        answerEl1.textContent = questionArray[questionNumber].incorrectAnswer2
-        answerEl3.textContent = questionArray[questionNumber].incorrectAnswer3
-        answerEl2.addEventListener("click",correctA)
-        answerEl1.addEventListener("click",wrongA)
-        answerEl3.addEventListener("click",wrongA)
-        answerEl4.addEventListener("click",wrongA)
-        if (correct) {
-            console.log("correct");
-        } else console.log("incorrect");
-        questionNumber++
-    }
+
     
     
 function startQuiz() {
@@ -144,6 +168,47 @@ function startQuiz() {
 }
 
 startButton.addEventListener("click", startQuiz)
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault()
+    localStorage.setItem("initials", initials.value)
+    localStorage.setItem("score", score.value) 
+})
+
+resetButton.addEventListener("click", function(event) {
+    event.preventDefault()
+    startCountDown = 30
+    questionNumber = 0
+    scorePage.setAttribute("style", "display: none")
+    startQuiz()
+})
+
+highscoreLink.addEventListener("click", function () {
+    scorePage.setAttribute("style", "display: none")
+    title1.setAttribute("style", "display: none")
+    title2.setAttribute("style", "display: none")
+    title3.setAttribute("style", "display: none")
+    title4.setAttribute("style", "display: none")
+    startButton.setAttribute("style", "display: none")
+    questions.setAttribute("style", "display: none")
+    answers.setAttribute("style", "display: none")
+    highscorePage.setAttribute("style", "display: flex")
+    var scoreVal = localStorage.getItem("score")
+    var initialVal = localStorage.getItem("initials")
+    if(scoreVal === null || initialVal === null) {
+    } else {
+    var h2 = document.createElement("h2")
+    h2.textContent = `${initialVal} Score: ${scoreVal}`
+    highscorePage.appendChild(h2)
+    }
+    }
+)
+
+clearButton.addEventListener("click", function () {
+    
+})
+
+
 
 // function to start the game
 // listen for start button click
