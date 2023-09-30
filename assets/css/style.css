@@ -45,6 +45,7 @@ header {
 .quiz-card #title1, #title2, #title3, #title4 {
     margin-bottom: 20px;
     text-align: center;
+    display: none;
 }
 
 .quiz-card p {
@@ -52,6 +53,7 @@ header {
 }
 
 .start-button {
+    display: none;
     padding: 5px;
     background-color: teal;
     border-radius: 30px;
@@ -85,6 +87,46 @@ header {
     padding: 3px;
     margin: 5px;
     width: 250px;
+}
+
+#score-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 75px;
+}
+
+#your-score {
+    display: flex;
+}
+
+#score {
+    margin-top: 50px;
+}
+
+#initials {
+    display: flex;
+    margin-top: 50px;
+}
+
+#initial-input {
+    display: flex;
+    border-radius: 3px;
+    width: 100px;
+    font-weight: bold;
+}
+
+#submit {
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    margin-left: 5px;
+    background: linear-gradient(to right, #aaf0a8, #70d573);
+}
+
+#highscore-page {
+    display: none;
 }
 
 #answer1:hover {

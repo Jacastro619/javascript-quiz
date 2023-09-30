@@ -2,7 +2,7 @@
 // querySelectors
 var startCountDown = 90
 var questionNumber = 0
-var answerArray = [1, 2, 3, 4]
+var answersArray = [1, 2, 3, 4]
 
 var timer = document.querySelector("#time");
 var startButton = document.querySelector(".start-button");
@@ -17,7 +17,7 @@ var answerEl1 = document.querySelector("#answer1");
 var answerEl2 = document.querySelector("#answer2");
 var answerEl3 = document.querySelector("#answer3");
 var answerEl4 = document.querySelector("#answer4");
-var correct = false;
+var correct = true
 
 var questionArray = [
     question1 = {
@@ -78,40 +78,55 @@ var questionArray = [
     }
 ]
 
-
-
-
-
+function newTime() {
+    timer.textContent = startCountDown
+}
 
 function startTimer() {
-    setInterval(function() {
-        timer.textContent = startCountDown
-        startCountDown--
-    }, 1000)
+    var countdown = setInterval(function() {
+        if (startCountDown <= 0) {
+            clearInterval(countdown)
+            questions.setAttribute("style", "display: none")
+            answers.setAttribute("style", "display: none")
+            startCountDown = 0
+            newTime()
+        } else {
+            startCountDown--
+            newTime()
+        }
+    }, 1000) 
 }
+
 
 function correctA() {
       correct = true
-      console.log('correct');
       nextQuestion()
-    } 
+    }
 
 function wrongA() {
-    correct
-    console.log('incorrect');
+    correct = false
+    startCountDown -= 10
+    newTime()
     nextQuestion()
+    if (startCountDown <= 0) {
+        questions.setAttribute("style", "display: none")
+        answers.setAttribute("style", "display: none")
+    }
 }
     
     function nextQuestion() {
         questionEl.textContent = questionArray[questionNumber].question
-        answerEl1.textContent = questionArray[questionNumber].correctAnswer
-        answerEl2.textContent = questionArray[questionNumber].incorrectAnswer1
-        answerEl3.textContent = questionArray[questionNumber].incorrectAnswer2
-        answerEl4.textContent = questionArray[questionNumber].incorrectAnswer3
-        answerEl1.addEventListener("click",correctA)
-        answerEl2.addEventListener("click",wrongA)
+        answerEl2.textContent = questionArray[questionNumber].correctAnswer
+        answerEl4.textContent = questionArray[questionNumber].incorrectAnswer1
+        answerEl1.textContent = questionArray[questionNumber].incorrectAnswer2
+        answerEl3.textContent = questionArray[questionNumber].incorrectAnswer3
+        answerEl2.addEventListener("click",correctA)
+        answerEl1.addEventListener("click",wrongA)
         answerEl3.addEventListener("click",wrongA)
         answerEl4.addEventListener("click",wrongA)
+        if (correct) {
+            console.log("correct");
+        } else console.log("incorrect");
         questionNumber++
     }
     
