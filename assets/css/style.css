@@ -17,6 +17,7 @@ header {
 
 #scores {
     margin: 1% 0 0 1%;
+    text-decoration: 3px underline;
 }
 
 #timer {
@@ -99,6 +100,7 @@ header {
 
 #your-score {
     display: flex;
+    margin-top: 100px;
 }
 
 #score {
@@ -107,7 +109,8 @@ header {
 
 #initials {
     display: flex;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
 #initial-input {
@@ -134,6 +137,11 @@ header {
     margin: 20px 0 20px 0;
     width: 100px;
     background: linear-gradient(to right, #aaf0a8, #70d573);
+}
+
+#score-direction {
+    font-size: 100%;
+    margin-bottom: 20px;
 }
 
 #scores:hover {
