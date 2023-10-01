@@ -13,7 +13,9 @@
 
 [Visit the Deployed Site](https://jacastro619.github.io/javascript-quiz/)
 
-This project tasked me with building and deploying a short multiple-choice quiz from the ground up. With the use of query selectors in JavaScript, I was able to give this page dynamic functionality. The content of this page is a short quiz that asks the user a series of fundamental JavaScript questions. The quiz has a timer that will countdown to zero. If the user gets a question wrong, the timer will decrease by five seconds. The quiz ends either when the timer reaches zero or once the user answers all the questions. At the end of the quiz, the user's score is the time left once the quiz is completed. If the user runs out of time, the score will be zero. At the end of the quiz, the user may save their previous score and start the quiz again.
+This project tasked me with building and deploying a short multiple-choice quiz from the ground up. With the use of query selectors in JavaScript, I was able to give this page dynamic functionality. The content of this page is a short quiz that asks the user a series of fundamental JavaScript questions. The quiz has a timer that will countdown to zero. If the user gets a question wrong, the timer will decrease by five seconds.
+
+The quiz ends either when the timer reaches zero or once the user answers all the questions. At the end of the quiz, the user's score is the time left once the quiz is completed. If the user runs out of time, the score will be zero. At the end of the quiz, the user may save their previous score and start the quiz again.
 
 ## Usage
 
@@ -51,7 +53,9 @@ Image 2c.
 
 ## Learning Points
 
-Throughout the first two weeks of UC Berkeley's Full Stack Coding Academy, I learned HTML, CSS, and JavaScript. This project challenged me to put it all together to make a functioning dynamic web page. Understanding how to properly use query selectors was crucial to this project as they are needed to select specific elements from the HTML file. We use query selectors so our JavaScript can add functionality to the page. One challenge I faced was figuring out how to randomly generate the order of the questions and answers. Upon researching potential solutions, I discovered the Fisher-Yates shuffle. I researched further into the use cases and the logic behind the code within the Fisher-Yates shuffle. I was able to implement the Fisher-Yates shuffle into my code to help solve my problem with randomly shuffling indexes in an array. This allowed me to randomly generate the order of the questions and answers. This was only a fraction of what I learned from this project. The more I practice this material, the more my skills will be refined to find solutions to problems in the future.
+Throughout the first two weeks of UC Berkeley's Full Stack Coding Academy, I learned HTML, CSS, and JavaScript. This project challenged me to put it all together to make a functioning dynamic web page. Understanding how to properly use query selectors was crucial to this project as they are needed to select specific elements from the HTML file. We use query selectors so our JavaScript can add functionality to the page.
+
+One challenge I faced was figuring out how to randomly generate the order of the questions and answers. Upon researching potential solutions, I discovered the Fisher-Yates shuffle. I researched further into the use cases and the logic behind the code within the Fisher-Yates shuffle. I was able to implement the Fisher-Yates shuffle into my code to help solve my problem with randomly shuffling indexes in an array. This allowed me to randomly generate the order of the questions and answers. This was only a fraction of what I learned from this project. The more I practice this material, the more my skills will be refined to find solutions to problems in the future.
 
 ## Author Info
 
