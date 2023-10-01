@@ -11,7 +11,7 @@
 
 ## Description
 
-[Visit the Deployed Site]()
+[Visit the Deployed Site](https://jacastro619.github.io/javascript-quiz/)
 
 This project tasked me with building and deploying a short multiple-choice quiz from the ground up. With the use of query selectors in JavaScript, I was able to give this page dynamic functionality. The content of this page is a short quiz that asks the user a series of fundamental JavaScript questions. The quiz has a timer that will countdown to zero. If the user gets a question wrong, the timer will decrease by five seconds. The quiz ends either when the timer reaches zero or once the user answers all the questions. At the end of the quiz, the user's score is the time left once the quiz is completed. If the user runs out of time, the score will be zero. At the end of the quiz, the user may save their previous score and start the quiz again.
 

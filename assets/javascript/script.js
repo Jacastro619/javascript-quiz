@@ -30,6 +30,7 @@ var goBackButton = document.querySelector("#go-back");
 var clearButton = document.querySelector("#clear-score");
 
 var questionArray = [
+  // Questions for the quiz
   (question1 = {
     question: "What is JavaScript primarily used for?",
     correctAnswer: "Adding interactivity to web pages",
@@ -89,10 +90,9 @@ var questionArray = [
   }),
 ];
 
-randomFunction(questionArray);
-
 function randomFunction(arr) {
-  // did some research on the Fisher-Yates shuffle to help me randomize the indexes in this case my questions array and content array on line 95 and line 140
+  // Suffles the questions and answers to be shown in a random order
+  // Did some research on the Fisher-Yates shuffle to help me randomize the indexes in this case my questions array and content array on line 95 and line 140
   for (var i = arr.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -101,12 +101,12 @@ function randomFunction(arr) {
 }
 
 function newTime() {
+  // updates the timer text in the html file
   timer.textContent = startCountDown;
 }
 
-newTime();
-
 function startTimer() {
+  // starts the countdown timer
   countdown = setInterval(function () {
     if (startCountDown <= 0) {
       clearInterval(countdown);
@@ -133,6 +133,7 @@ function startTimer() {
 }
 
 function nextQuestion() {
+  // shows the next question in the quiz
   if (questionArray[questionNumber] === undefined) {
     questions.setAttribute("style", "display: none");
     answers.setAttribute("style", "display: none");
@@ -156,22 +157,8 @@ function nextQuestion() {
   }
 }
 
-answers.addEventListener("click", function (event) {
-  clearInterval(countdown);
-  if (
-    event.target.textContent === questionArray[questionNumber].correctAnswer
-  ) {
-  } else {
-    startCountDown -= 5;
-    newTime();
-  }
-
-  questionNumber++;
-  nextQuestion();
-  startTimer();
-});
-
 function startQuiz() {
+  // starts the initial functionality of the quiz
   startTimer();
   title1.setAttribute("style", "display: none");
   title2.setAttribute("style", "display: none");
@@ -183,9 +170,31 @@ function startQuiz() {
   nextQuestion();
 }
 
-startButton.addEventListener("click", startQuiz);
+randomFunction(questionArray);
+
+newTime();
+
+startButton.addEventListener("click", startQuiz); // starts the quiz when the "start quiz" button is clicked on
+
+answers.addEventListener("click", function (event) {
+  // checks to see if the answer is right or wrong
+  clearInterval(countdown); // stops the most recent startTimer() call to prevent stacking of the functions execution
+  if (
+    event.target.textContent === questionArray[questionNumber].correctAnswer
+  ) {
+  } else {
+    // if answer is wrong it will subtract 5 seconds from timer
+    startCountDown -= 5;
+    newTime();
+  }
+
+  questionNumber++;
+  nextQuestion();
+  startTimer(); // resumes the timer with a new function call
+});
 
 submitButton.addEventListener("click", function (event) {
+  // submits content in initial input box to local storage
   event.preventDefault();
   localStorage.setItem("initials", initials.value);
   localStorage.setItem("score", score.value);
@@ -193,6 +202,7 @@ submitButton.addEventListener("click", function (event) {
 });
 
 resetButton.addEventListener("click", function (event) {
+  // restarts the quiz from score page
   event.preventDefault();
   randomFunction(questionArray);
   startCountDown = 45;
@@ -202,6 +212,7 @@ resetButton.addEventListener("click", function (event) {
 });
 
 highscoreLink.addEventListener("click", function () {
+  // goes to latest score page
   startCountDown = 110;
   scorePage.setAttribute("style", "display: none");
   title1.setAttribute("style", "display: none");
@@ -222,6 +233,7 @@ highscoreLink.addEventListener("click", function () {
 });
 
 clearButton.addEventListener("click", function () {
+  // clears the most recent score
   var scoreVal = localStorage.getItem("score");
   var initialVal = localStorage.getItem("initials");
   if (scoreVal !== null || initialVal !== null) {
@@ -231,6 +243,7 @@ clearButton.addEventListener("click", function () {
 });
 
 goBackButton.addEventListener("click", function () {
+  // goes back to menu page from latest score page
   questionNumber = 0;
   startCountDown = 45;
   newTime();
