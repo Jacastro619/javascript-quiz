@@ -47,7 +47,7 @@ Image 2b.
 
 Image 2c.
 
-![View Score Page](./assets/images/submitted%20score%20sreenshot.JPG)
+![View score page screenshot](./assets/images/submitted%20score%20sreenshot.JPG)
 
 ## Learning Points
 
