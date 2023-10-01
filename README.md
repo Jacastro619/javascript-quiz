@@ -17,7 +17,7 @@ This project tasked me with building and deploying a short multiple-choice quiz 
 
 ## Usage
 
-- Startting quiz and timer: Upon initial loading of the page the user will be meet with the quiz page (image 1a.). After reading the brief instruction the user may click on the "Start Quiz" button to begin the quiz. Once the quiz begins the timer on the top right of screen (second image below) will automatically start. During the quiz, if the user selects the incorrect answer to a quesiton, the timer will decrease 5 seconds.
+- Starting Quiz and Timer: Upon the initial loading of the page, the user will be met with the quiz page (Image 1a). After reading the brief instructions, the user may click on the "Start Quiz" button to begin the quiz. Once the quiz begins, the timer on the top right of the screen (second image below) will automatically start. During the quiz, if the user selects the incorrect answer to a question, the timer will decrease by 5 seconds.
 
 Image 1a.
 
@@ -31,7 +31,7 @@ Image 1b.
 
 ---
 
-- Submitting and Viewing score: At the end of the quiz, the user may submit their score. The score page (Image 2a.), will be where the user types their initals and submit their score. Once the user types their name in the input the box provided, they'll click the submit button to submit the score into local storage. If the user wishes to view their previous submitted score, the may click on the "Last Submitted Score" link at the top left of the page (Image 2b.). This will show the user their previous submitted score (Image 2c.).
+- Submitting and Viewing Scores: At the end of the quiz, the user may submit their score. The score page (Image 2a) will be where the user types their initials and submits their score. Once the user types their name in the input box provided, they'll click the submit button to store the score in local storage. If the user wishes to view their previously submitted score, they may click on the "Last Submitted Score" link at the top left of the page (Image 2b). This will display the user's previously submitted score (Image 2c).
 
 Image 2a.
 
@@ -51,7 +51,7 @@ Image 2c.
 
 ## Learning Points
 
-Throughout the first two weeks of UC Berkeley's Full Stack Coding Academy, I learned HTML, CSS, and JavaScript. This project challenged me to put it all together to make a functioning dynamic web page. Understanding how to properly use query selectors was crutial to this project as they are needed to select specific elements from the HTML file. We use query selectors so our JavaScript can add functionality to the page. One challenge I faced was figuring out how to randomly generate the order of the questions and answers. Upon researching potential solutions, I discovered the Fisher-Yates shuffle. I researched further into the use cases and the logic behind the code within the Fisher-Yates shuffle. I was able to implement the Fisher-Yates shiffle into my code to help solve my problem with randomly shuffling indexes in an array. This allowed me to randomly generate the order of the questions and answers. This was only a fraction of what I learned from this project. The more I practice this material, the more my skills will be refined to find solutions to problems in the future.
+Throughout the first two weeks of UC Berkeley's Full Stack Coding Academy, I learned HTML, CSS, and JavaScript. This project challenged me to put it all together to make a functioning dynamic web page. Understanding how to properly use query selectors was crucial to this project as they are needed to select specific elements from the HTML file. We use query selectors so our JavaScript can add functionality to the page. One challenge I faced was figuring out how to randomly generate the order of the questions and answers. Upon researching potential solutions, I discovered the Fisher-Yates shuffle. I researched further into the use cases and the logic behind the code within the Fisher-Yates shuffle. I was able to implement the Fisher-Yates shuffle into my code to help solve my problem with randomly shuffling indexes in an array. This allowed me to randomly generate the order of the questions and answers. This was only a fraction of what I learned from this project. The more I practice this material, the more my skills will be refined to find solutions to problems in the future.
 
 ## Author Info
 
