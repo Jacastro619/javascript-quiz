@@ -3,24 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>JavaScript</title>
   </head>
   <body>
     <header>
-    <h3 id="scores">Latest Score</h3>
-    <h3 id="timer">Time Left: <span id="time"></span></h3>
+      <h3 id="scores">Last Submitted Score</h3>
+      <h3 id="timer">Time Left: <span id="time"></span></h3>
     </header>
     <div class="content">
       <div class="quiz-card">
         <h1 id="title1">JavaScript Quiz</h1>
         <h2 id="title2">How Much JavaScript Do You Know?</h2>
         <p id="title3">
-        This is a short quiz that will test your knowledge on JavaScript. Press
-        the "Start Quiz" button to begin the quiz. Note, this is a timed quiz
-        and for each question you get wrong you will be penalized for time.
-        You're score will be the amount of time you have left when you answered
-        all the questions.
+          This is a short quiz that will test your knowledge on JavaScript.
+          Press the "Start Quiz" button to begin the quiz. Note, this is a timed
+          quiz and for each question you get wrong you will be penalized for
+          time. You're score will be the amount of time you have left when you
+          answered all the questions.
         </p>
         <h2 id="title4">Good Luck!</h2>
         <button class="start-button">Start Quiz</button>
@@ -37,17 +37,25 @@
           <h2 id="your-score">Your Score</h2>
           <h2 id="score"><span id="the-score"></span></h2>
           <form id="initials">
-            <input type="text" name="initials" id="initial-input" placeholder=" Initials Here"/>
+            <input
+              type="text"
+              name="initials"
+              id="initial-input"
+              placeholder=" Initials Here"
+            />
             <button id="submit">Submit</button>
             <button id="reset">reset</button>
           </form>
-          <h2 id="score-direction">click on "Latest Score" to see your most recent score!</h2>
+          <h2 id="score-direction">
+            click on "Latest Submitted Score" to see your most recent submitted
+            score!
+          </h2>
         </div>
         <div id="highscore-page">
           <h2>Latest Score</h2>
           <div id="score-buttons">
-          <button id="go-back">Go Back</button>
-          <button id="clear-score">Clear Score</button>
+            <button id="go-back">Go Back</button>
+            <button id="clear-score">Clear Score</button>
           </div>
         </div>
       </div>

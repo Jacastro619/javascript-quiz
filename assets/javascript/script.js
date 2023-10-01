@@ -1,7 +1,7 @@
 // variable declarations
 // querySelectors
 var h2 = document.createElement("h2");
-var startCountDown = 30;
+var startCountDown = 45;
 var questionNumber = 0;
 var answersArray = [1, 2, 3, 4];
 var countdown;
@@ -89,8 +89,10 @@ var questionArray = [
   }),
 ];
 
+randomFunction(questionArray);
+
 function randomFunction(arr) {
-  // did some research on the Fisher-Yates shuffle to help me randomize the indexes in this case my content array on line 140
+  // did some research on the Fisher-Yates shuffle to help me randomize the indexes in this case my questions array and content array on line 95 and line 140
   for (var i = arr.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -165,10 +167,8 @@ answers.addEventListener("click", function (event) {
   }
 
   questionNumber++;
-  setTimeout(function () {
-    nextQuestion();
-    startTimer();
-  });
+  nextQuestion();
+  startTimer();
 });
 
 function startQuiz() {
@@ -189,11 +189,13 @@ submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   localStorage.setItem("initials", initials.value);
   localStorage.setItem("score", score.value);
+  initials.value = "";
 });
 
 resetButton.addEventListener("click", function (event) {
   event.preventDefault();
-  startCountDown = 30;
+  randomFunction(questionArray);
+  startCountDown = 45;
   questionNumber = 0;
   scorePage.setAttribute("style", "display: none");
   startQuiz();
@@ -230,7 +232,7 @@ clearButton.addEventListener("click", function () {
 
 goBackButton.addEventListener("click", function () {
   questionNumber = 0;
-  startCountDown = 30;
+  startCountDown = 45;
   newTime();
   title1.setAttribute("style", "display: flex");
   title2.setAttribute("style", "display: flex");
