@@ -1,4 +1,4 @@
-# JavaScript Screen
+# JavaScript Quiz
 
 ## Technology Used
 
